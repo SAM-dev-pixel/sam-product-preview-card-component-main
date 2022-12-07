@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    padding: 1rem;
+    font-size: 14px;
+    /*font-family: 'Fraunces', serif;*/
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--cream);
+}
+#container {
+    max-width: 40rem;
+    display: flex;
+    margin: auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.img-wrapper {
+    flex: 1;
+    width: 50%;
+    overflow: hidden;
+}
+.img-wrapper > * {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .25s;
+}
+.img-wrapper > *:hover { transform: scale(1.2); }
+
+.txt-wrapper {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1em;
+    background-color: var(--white);
+    padding: 2em;
+}
+.top-title {
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+}
+.title {
+    color: var(--very-dark-blue);
+    font-size: 2.6rem;
+    font-family: 'Fraunces', serif;
+    
+}
+.txt {
+    font-weight: 500;
+    color: var(--dark-grayish-blue);
+    line-height: 1.72em;
+}
+.price {
+    color: var(--dark-cyan);
+    font-size: 2.4rem;
+    font-family: 'Fraunces', serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+.price-disc {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-decoration: line-through;
+    color: var(--dark-grayish-blue);
+}
+
+.btn-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 1rem;
+    font-weight: 700;
+    background-color: var(--dark-cyan);
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--white);
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: .25s;
+}
+.btn-add:hover {
+    background-color: hsl(158, 41%, 29%);
+}
+.btn-add:active { transform: scale(.97); }
+
+@media screen and (width <= 500px) {
+
+    #container {
+        flex-direction: column;
+    }
+    .img-wrapper > *  { display: block;}
+    .img-wrapper, .txt-wrapper { width: 100%; }
+}
